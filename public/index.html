@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qntmai.space - Sentinel of the Frontier</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+    <link rel="stylesheet" href="/styles/main.css">
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/UnrealBloomPass.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+    <!-- Ensure CORS and crossorigin are properly set -->
+    <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+</head>
+<body>
+    <!-- Preload Overlay -->
+    <div id="preload-overlay">
+        <div class="loading-text">Initializing qntmai.space...</div>
+        <div class="loading-bar-container">
+            <div id="loading-bar" class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Three.js Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Main Content Overlay -->
+    <div id="overlay">
+        <h1 class="title-text">qntmai.space</h1>
+        <div class="subtitle-carousel">
+            <div class="subtitle-item active">A Nexus of Quantum Intelligence.</div>
+            <div class="subtitle-item">Deconstructing the Fabric of Reality.</div>
+            <div class="subtitle-item">Where Algorithms Dream.</div>
+            <div class="subtitle-item">The Singularity Beckons.</div>
+            <div class="subtitle-item">Beyond the Digital Frontier.</div>
+            <div class="subtitle-item">Protocols Established. Future Engaged.</div>
+            <div class="subtitle-item">Processing Chaos. Architecting Order.</div>
+        </div>
+        <div class="slogan-field">_Enter the System_</div>
+        <button id="launch-portfolio-btn" class="launch-button">Launch Portfolio</button>
+    </div>
+
+    <!-- Sound Toggle -->
+    <button id="sound-toggle-btn" class="sound-toggle">
+        &#x1F50A;
+    </button>
+
+    <!-- Content Sections -->
+    <div id="architectural-constructs" class="data-node-section">
+        <!-- Architectural Constructs content -->
+    </div>
+
+    <div id="genesis-protocol" class="genesis-protocol-section">
+        <!-- Genesis Protocol content -->
+    </div>
+
+    <div id="digital-sigil" class="digital-sigil-section">
+        <!-- Digital Sigil content -->
+    </div>
+
+    <!-- Skills & Technologies Section -->
+    <div id="skills" class="skills-section">
+        <div class="section-header">
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">Mastering the convergence of cutting-edge technologies and innovative solutions</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">🤖</div>
+                <h3 class="skill-title">AI & Machine Learning</h3>
+                <p class="skill-description">Developing intelligent systems using state-of-the-art algorithms and neural networks, specializing in deep learning and natural language processing.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔄</div>
+                <h3 class="skill-title">DevOps & Cloud</h3>
+                <p class="skill-description">Implementing robust CI/CD pipelines and managing cloud infrastructure across AWS, Azure, and GCP platforms.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🎯</div>
+                <h3 class="skill-title">System Architecture</h3>
+                <p class="skill-description">Designing scalable, resilient systems using microservices architecture and event-driven patterns.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔒</div>
+                <h3 class="skill-title">Cybersecurity</h3>
+                <p class="skill-description">Implementing advanced security measures and conducting penetration testing to ensure robust system protection.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Showcase Section -->
+    <div id="projects" class="projects-section">
+        <div class="section-header">
+            <h2 class="section-title">Digital Manifestations</h2>
+            <p class="section-subtitle">A curated collection of groundbreaking projects and technological innovations</p>
+        </div>
+        <div class="projects-carousel">
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('https://source.unsplash.com/random/400x300?tech')"></div>
+                <h3 class="project-title">Neural Network Explorer</h3>
+                <p class="project-description">An interactive visualization platform for understanding and manipulating neural networks in real-time.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">WebGL</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('https://source.unsplash.com/random/400x300?coding')"></div>
+                <h3 class="project-title">Quantum Edge Computing</h3>
+                <p class="project-description">Pioneering research in quantum computing applications for edge devices and IoT networks.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Qiskit</span>
+                    <span class="tech-tag">Rust</span>
+                    <span class="tech-tag">CUDA</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('https://source.unsplash.com/random/400x300?data')"></div>
+                <h3 class="project-title">Autonomous Systems</h3>
+                <p class="project-description">Self-healing infrastructure and autonomous decision-making systems for critical applications.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Go</span>
+                    <span class="tech-tag">Kubernetes</span>
+                    <span class="tech-tag">ML Ops</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="contact-section">
+        <div class="section-header">
+            <h2 class="section-title">Establish Connection</h2>
+            <p class="section-subtitle">Interface with the digital frontier through these communication channels</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-label">Email Protocol</div>
+                <a href="mailto:contact@qntmai.space" class="contact-value">contact@qntmai.space</a>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">💼</div>
+                <div class="contact-label">Professional Network</div>
+                <a href="https://linkedin.com/in/qntmai" target="_blank" class="contact-value">linkedin.com/in/qntmai</a>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">⚡</div>
+                <div class="contact-label">Code Repository</div>
+                <a href="https://github.com/qntmai" target="_blank" class="contact-value">github.com/qntmai</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Scripts -->
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>
